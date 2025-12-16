@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WhatsApp Chat Analyzer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <header>
+    <div class="header-main">
+      <h1 data-text="WhatsApp Chat Analyzer">WhatsApp Chat Analyzer</h1>
+    </div>
+    <div class="header-right">
+      <button id="themeToggle" class="theme-toggle" aria-label="Toggle theme">
+        <span id="themeIcon">🌙</span>
+      </button>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="card">
+      <div class="upload">
+        <input type="file" id="chatFile" accept=".txt" required>
+        <input type="text" id="youName" placeholder="Your name in chat" required>
+        <input type="text" id="friendName" placeholder="Your friend name in chat" required>
+        <button id="analyzeBtn">Analyze Chat</button>
+        <span id="loading">Analyzing…</span>
+      </div>
+      <div class="subtitle" style="margin-top:8px;">
+        <strong>How to analyze your WhatsApp chat:</strong>
+        <ol style="margin: 8px 0 0 20px; padding-left: 0; font-size: 1em;">
+          <li>Open WhatsApp and go to the chat you want to analyze.</li>
+          <li>Tap the <b>three dots</b> menu (<b>⋮</b>) in the top right corner.</li>
+          <li>Select <b>More</b>, then choose <b>Export chat</b>.</li>
+          <li>Choose <b>Without Media</b> to export only text messages.</li>
+          <li>Send the .txt file to yourself (for example, via email).</li>
+          <li>Upload the <b>.txt file</b> here, enter both names as they appear in the chat, and click <b>Analyze Chat</b>.</li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="card">
+      <div class="metrics" id="metrics">
+        <div class="metric">
+          <h3>Chat Timeline</h3>
+          <div class="value" id="chatTimeline">—</div>
+        </div>
+        <div class="metric">
+          <h3>Total Text Messages</h3>
+          <div class="value" id="totalMessages">—</div>
+        </div>
+        <div class="metric">
+          <h3>Total Emoji</h3>
+          <div class="value" id="emojiStats">—</div>
+        </div>
+        <div class="metric">
+          <h3>Late-night Messages (12AM – 4AM)</h3>
+          <div class="value" id="lateNight">—</div>
+        </div>
+        <div class="metric">
+          <h3>Quick Replies (≤5m)</h3>
+          <div class="value" id="quickReplies">—</div>
+        </div>
+        <div class="metric">
+          <h3>Outliers</h3>
+          <div class="value" id="outliers">—</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>📈 Timeline</h2>
+      <canvas id="timelineChart"></canvas>
+    </section>
+
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js" defer></script>
+  <script src="{{ url_for('static', filename='app.js') }}" defer></script>
+</body>
+</html>
+
