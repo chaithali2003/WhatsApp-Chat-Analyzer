@@ -120,7 +120,7 @@ Total: count
 DBSCAN is used to identify:
 - Irregular communication patterns  
 - Sparse or noisy message events  
-- Deleted messages as outliers  
+- Identify outliers  
 
 The algorithm does not require a predefined number of clusters and works efficiently with real-world chat data.
 
@@ -137,9 +137,7 @@ The algorithm does not require a predefined number of clusters and works efficie
 
 ## 👩‍💻 Author
 
-Made with ❤️ by **Chaithali S**  
-
-**Chaithali S**  
+Made with ❤️ by **Chaithali S**   
 GitHub: https://github.com/chaithali2003
 
 ---
