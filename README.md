@@ -18,29 +18,6 @@ This project focuses on analyzing real chat behavior patterns while applying str
 
 ---
 
-## 🧠 Message Filtering Rules
-
-### Message Count Includes
-- Normal text messages  
-- Messages containing **text + emoji**  
-- Messages containing links  
-
-### Message Count Excludes
-- Emoji-only messages  
-- "This message was deleted"  
-- System-generated messages  
-
-### Emoji Count Rules
-- Emojis inside text messages are counted  
-- Each emoji is counted individually  
-- Repeated emojis are counted every time  
-- Emoji-only messages are ignored  
-
-### Outliers
-- Messages with the text **"This message was deleted"** are treated as outliers and noise points for DBSCAN
-
----
-
 ## 🛠️ Technology Stack
 
 **Frontend**
@@ -109,29 +86,31 @@ http://127.0.0.1:5000
 
 ---
 
-## 📊 Sample Output
+## 📊 Output Template
 
 ```
+Chat Timeline
+Start: DD-MM-YYYY
+End: DD-MM-YYYY
+
 Total Messages
-Total: 139
-User 1: 83
-User 2: 56
+Total: sum
+User 1: count
+User 2: count
 
 Total Emoji
-Total: 8
-User 1: 6
-User 2: 2
+Total: sum
+User 1: count
+User 2: count
 
 Late-night Messages (12AM - 4AM)
-Total: 0
+Total: count
 
 Quick Replies (≤5m)
-Total: 48
-
-Total Chat Days: 37
+Total: count
 
 Outliers
-Total: 2
+Total: count
 ```
 
 ---
@@ -156,13 +135,9 @@ The algorithm does not require a predefined number of clusters and works efficie
 
 ---
 
-## 📜 License
-
-This project is open-source and available under the **MIT License**.
-
----
-
 ## 👩‍💻 Author
+
+Made with ❤️ by **Chaithali S**  
 
 **Chaithali S**  
 GitHub: https://github.com/chaithali2003
